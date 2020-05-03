@@ -1,22 +1,23 @@
 import React from "react";
-import navbar from './Navbar.module.css'
+import n from './Navbar.module.css'
 import {NavLink} from "react-router-dom";
 
 const Navbar = () => {
-    return <nav className={navbar.nav}>
-        <div>
-            <NavLink to="/projects">Projects</NavLink>
+    return <nav className={n.nav}>
+        <div className={n.item}>
+            <NavLink to="/projects" activeClassName={n.activeLink}>Projects</NavLink>
         </div>
-        <div>
-            <NavLink to="/tasks">Tasks</NavLink>
+        <div className={n.item}>
+            <NavLink to="/tasks" activeClassName={n.activeLink}>Tasks</NavLink>
+        </div >
+        <div className={n.item}>
+            <NavLink to="/groups" activeClassName={n.activeLink}>Groups</NavLink>
         </div>
-        <div><NavLink to="/groups">Groups</NavLink>
+        <div className={n.item}>
+            <NavLink to="/employees" activeClassName={n.activeLink}>Employees</NavLink>
         </div>
-        <div>
-            <NavLink to="/employees">Employees</NavLink>
-        </div>
-        <div>
-            <NavLink to="/profiles">Profiles</NavLink>
+        <div className={n.item}>
+            <NavLink to="/profiles" activeClassName={n.activeLink}>Profiles</NavLink>
         </div>
     </nav>
 

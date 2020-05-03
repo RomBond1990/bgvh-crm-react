@@ -1,9 +1,12 @@
 import React from "react";
 import e from "./Employees.module.css"
 
-const Employees = () => {
-    return <div className={e.item}>
-        Сотрудник 1
+const Employees = (props) => {
+
+    let employeesList = props.employees.map( employee => <div className={e.item}>{employee.name}</div>)
+
+    return <div>
+        {employeesList}
     </div>
 }
 

@@ -1,9 +1,12 @@
 import React from "react";
 import g from "./Groups.module.css"
 
-const Groups = () => {
-    return <div className={g.item}>
-        Сотрудник 1
+const Groups = (props) => {
+
+    let groupsList = props.groups.map(group => <div className={g.item}>{group.name}</div>)
+
+    return <div>
+        {groupsList}
     </div>
 }
 

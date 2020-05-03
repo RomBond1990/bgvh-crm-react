@@ -1,9 +1,10 @@
 import React from "react";
 import t from "./Tasks.module.css"
 
-const Tasks = () => {
-    return <div className={t.item}>
-        Задача 1
+const Tasks = (props) => {
+    let tasksList = props.tasks.map(task => <div className={t.item}> {task.name} </div>)
+    return <div>
+        {tasksList}
     </div>
 }
 

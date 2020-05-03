@@ -1,9 +1,12 @@
 import React from "react";
 import p from "./Projects.module.css"
 
-const Projects = () => {
-    return <div className={p.item}>
-        Проект 1
+const Projects = (props) => {
+
+    let projectsList = props.projects.map(project => <div className={p.item}>{project.name}</div>)
+
+    return <div>
+        {projectsList}
     </div>
 }
 
