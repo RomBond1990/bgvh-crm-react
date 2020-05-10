@@ -1,3 +1,6 @@
+let rerenderEntireTree = () => {
+}
+
 let state = {
     groups: [
         {id: 1, name: "ГВП1"},
@@ -23,8 +26,39 @@ let state = {
     projects: [
         {id: 1, name: "Project 1"},
         {id: 2, name: "Project 2"},
-        {id: 3, name: "Project 3"},
-    ]
+        {id: 3, name: "Project 3"}
+    ],
+    profile: {
+        posts: [
+            {id: 1, message: "Kyky"},
+            {id: 2, message: "Have a nice day"},
+            {id: 3, message: "Go pvp"}
+        ],
+        newPostText: ""
+    }
 }
+
+window.state = state
+
+export const addMessage = () => {
+
+    let newPost = {
+        id: 5,
+        message: state.profile.newPostText
+    };
+    state.profile.posts.push(newPost);
+    state.profile.newPostText = "";
+    rerenderEntireTree(state);
+}
+
+export const updateNewPostText = (newText) => {
+    state.profile.newPostText = newText;
+    rerenderEntireTree(state);
+}
+
+export const subscribe = (observer) => {
+    rerenderEntireTree = observer;
+}
+
 
 export default state;
