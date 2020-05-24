@@ -8,7 +8,7 @@ import Tasks from "./Components/Tasks/Tasks";
 import Projects from "./Components/Projects/Projects";
 import Groups from "./Components/Groups/Groups";
 import Employees from "./Components/Employees/Employees";
-import {updateNewPostText} from "./Components/imitationDB/state";
+import {updateNewPostText} from "./Components/redux/state";
 
 const App = (props) => {
     return (
@@ -23,8 +23,7 @@ const App = (props) => {
                     <Route path='/employees' render={() => <Employees employees={props.state.employees}/>}/>
                     <Route path='/profiles'
                            render={() => <Profile profile={props.state.profile}
-                                                  addMessage={props.addMessage}
-                                                  updateNewPostText={props.updateNewPostText}/>}/>
+                                                  dispatch={props.dispatch}/>}/>
                 </div>
             </div>
         </BrowserRouter>
