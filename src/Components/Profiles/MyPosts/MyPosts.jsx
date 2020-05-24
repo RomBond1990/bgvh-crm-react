@@ -1,11 +1,12 @@
 import React from "react";
 import Post from "./Posts/Post";
 import profile from "./MyPosts.module.css";
-import {addMessageActionCreator, updateNewPostTextActionCreator} from "../../redux/state";
+import {addMessageActionCreator, updateNewPostTextActionCreator} from "../../redux/profile-reducer";
+
 
 const MyPosts = (props) => {
-
-    let postsList = props.posts.map(post => <Post message={post.message}/>);
+debugger
+    let postsList = props.profile.posts.map(post => <Post message={post.message}/>);
 
     let newPostElement = React.createRef();
 
@@ -26,7 +27,7 @@ const MyPosts = (props) => {
 
             <h3>My posts</h3>
             <div>
-                <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText}/>
+                <textarea onChange={onPostChange} ref={newPostElement} value={props.profile.newPostText}/>
             </div>
             <div>
                 <button onClick={addMessage}>Add message</button>
